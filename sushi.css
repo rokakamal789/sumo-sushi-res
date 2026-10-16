@@ -1,0 +1,1508 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #070b11;
+    color: white;
+}
+
+
+/* ================= HEADER ================= */
+
+header {
+    width: 100%;
+    padding: 20px 8%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    z-index: 1000;
+
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: 4px;
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    color: #ccc;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #ff2b2b;
+}
+
+.book-btn {
+    background: #ff2b2b;
+    color: white;
+    border: none;
+
+    padding: 12px 22px;
+
+    border-radius: 40px;
+
+    cursor: pointer;
+    font-weight: 600;
+}
+
+
+/* ================= SIDEBAR ================= */
+
+.sidebar {
+    position: fixed;
+
+    top: 50%;
+    right: 20px;
+
+    transform: translateY(-50%);
+
+    width: 155px;
+    max-height: 560px;
+
+    padding: 10px;
+
+    background: rgba(35, 35, 35, 0.95);
+
+    border: 1px solid #3d3d3d;
+    border-radius: 24px;
+
+    overflow-y: auto;
+
+    display: flex;
+    flex-direction: column;
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+
+    z-index: 999;
+}
+
+
+/* scrollbar */
+
+.sidebar::-webkit-scrollbar {
+    width: 4px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background: #555;
+    border-radius: 10px;
+}
+
+
+/* sidebar links */
+
+.sidebar a {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    min-height: 38px;
+
+    color: #eee;
+    text-decoration: none;
+
+    font-size: 15px;
+    font-family: Arial, sans-serif;
+
+    border-radius: 12px;
+
+    transition: 0.3s ease;
+}
+
+.sidebar a:hover {
+    background: #ff2b2b;
+    color: white;
+
+    transform: translateX(-3px);
+}
+
+
+/* ================= MENU TITLE ================= */
+
+.menu-h {
+    text-align: center;
+
+    margin-top: 120px;
+    margin-bottom: 45px;
+
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.menu-h h1 {
+    font-size: 45px;
+    font-weight: bold;
+
+    letter-spacing: 1px;
+}
+
+.menu-h h1::after {
+    content: "";
+
+    display: block;
+
+    width: 55px;
+    height: 3px;
+
+    margin: 12px auto;
+
+    background: #ff2b2b;
+
+    border-radius: 10px;
+}
+
+.menu-h p {
+    font-size: 17px;
+
+    color: #9ca3af;
+
+    margin-top: 15px;
+
+    line-height: 1.7;
+}
+
+
+/* ================= SECTIONS ================= */
+
+.Salad {
+    width: calc(100% - 220px);
+
+    margin: 40px;
+    margin-right: 200px;
+
+    display: grid;
+
+    grid-template-columns: repeat(5, 1fr);
+
+    gap: 25px;
+
+    /* مهم عشان الـ navbar */
+    scroll-margin-top: 100px;
+
+    margin-bottom: 100px;
+}
+
+
+/* ================= SECTION TITLE ================= */
+
+.menu-header {
+    grid-column: 1 / -1;
+
+    text-align: center;
+
+    margin-bottom: 10px;
+
+    font-family: 'Poppins', sans-serif;
+}
+
+.menu-header h1 {
+    font-size: 38px;
+
+    margin-bottom: 15px;
+}
+
+.menu-header h1::after {
+    content: "";
+
+    display: block;
+
+    width: 45px;
+    height: 3px;
+
+    margin: 10px auto;
+
+    background: #ff6f6f;
+
+    border-radius: 10px;
+}
+
+
+/* ================= CARDS ================= */
+
+.card {
+    position: relative;
+
+    min-height: 250px;
+
+    background: linear-gradient(
+        145deg,
+        #333333,
+        #272727
+    );
+
+    border: 1px solid #3b3b3b;
+
+    border-radius: 22px;
+
+    padding: 25px 20px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    text-align: center;
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.25);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+/* card hover */
+
+.card:hover {
+    transform: translateY(-8px);
+
+    border-color: #ff6f6f;
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.45);
+}
+
+
+/* card name */
+
+.card h3 {
+    font-size: 24px;
+
+    margin-bottom: 12px;
+
+    font-weight: bold;
+
+    line-height: 1.25;
+
+    text-align: center;
+}
+
+
+/* price */
+
+.card h4 {
+    margin-bottom: 20px;
+
+    text-align: center;
+
+    font-size: 25px;
+
+    color: #ff7070;
+}
+
+
+/* description */
+
+.card p {
+    color: #aeb7c2;
+
+    line-height: 1.7;
+
+    font-size: 16px;
+}
+
+
+/* special text */
+
+.special {
+    color: #FF2B2B;
+
+    font-weight: 400;
+
+    font-size: 21px;
+}
+
+/* ================= MEDIA QUERY ================= */
+
+
+/* ===== LAPTOP / SMALL DESKTOP ===== */
+
+@media (max-width: 1200px) {
+
+    .Salad {
+        width: calc(100% - 210px);
+        margin-right: 190px;
+
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .sidebar {
+        width: 140px;
+        right: 15px;
+    }
+
+    .card h3 {
+        font-size: 22px;
+    }
+
+}
+
+
+/* ===== TABLET ===== */
+
+@media (max-width: 900px) {
+
+    header {
+        padding: 18px 5%;
+    }
+
+    nav {
+        gap: 18px;
+    }
+
+    .logo {
+        font-size: 19px;
+    }
+
+    .book-btn {
+        padding: 10px 16px;
+    }
+
+    .sidebar {
+        width: 125px;
+        right: 10px;
+    }
+
+    .sidebar a {
+        font-size: 13px;
+        min-height: 35px;
+    }
+
+    .Salad {
+        width: calc(100% - 160px);
+
+        margin-left: 25px;
+        margin-right: 135px;
+
+        grid-template-columns: repeat(3, 1fr);
+
+        gap: 18px;
+    }
+
+    .card {
+        min-height: 230px;
+        padding: 20px 12px;
+    }
+
+    .card h3 {
+        font-size: 20px;
+    }
+
+    .card h4 {
+        font-size: 22px;
+    }
+
+    .card p {
+        font-size: 14px;
+    }
+
+}
+
+
+/* ===== MOBILE ===== */
+
+@media (max-width: 650px) {
+
+    header {
+        position: relative;
+
+        padding: 15px 5%;
+
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    nav {
+        gap: 12px;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+    nav a {
+        font-size: 14px;
+    }
+
+    .book-btn {
+        display: none;
+    }
+
+
+    /* MENU TITLE */
+
+    .menu-h {
+        margin-top: 40px;
+        margin-bottom: 30px;
+
+        padding: 0 15px;
+    }
+
+    .menu-h h1 {
+        font-size: 35px;
+    }
+
+    .menu-h p {
+        font-size: 14px;
+    }
+
+
+    /* SIDEBAR */
+
+    .sidebar {
+        position: relative;
+
+        top: auto;
+        right: auto;
+
+        transform: none;
+
+        width: 92%;
+
+        max-height: none;
+
+        margin: 20px auto;
+
+        padding: 8px;
+
+        flex-direction: row;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+        gap: 5px;
+    }
+
+    .sidebar a {
+        min-height: auto;
+
+        padding: 8px 10px;
+
+        font-size: 12px;
+    }
+
+
+    /* SECTIONS */
+
+    .Salad {
+        width: 92%;
+
+        margin: 50px auto;
+
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 15px;
+    }
+
+
+    /* SECTION TITLE */
+
+    .menu-header {
+        margin-bottom: 5px;
+    }
+
+    .menu-header h1 {
+        font-size: 30px;
+    }
+
+
+    /* CARDS */
+
+    .card {
+        min-height: 220px;
+
+        padding: 20px 10px;
+    }
+
+    .card h3 {
+        font-size: 19px;
+    }
+
+    .card h4 {
+        font-size: 20px;
+
+        margin-bottom: 15px;
+    }
+
+    .card p {
+        font-size: 14px;
+
+        line-height: 1.5;
+    }
+
+}
+
+
+/* ===== VERY SMALL MOBILE ===== */
+
+@media (max-width: 450px) {
+
+    .menu-h h1 {
+        font-size: 30px;
+    }
+
+    .menu-h p {
+        font-size: 13px;
+    }
+
+    .sidebar {
+        width: 95%;
+    }
+
+    .sidebar a {
+        font-size: 11px;
+
+        padding: 7px 8px;
+    }
+
+    .Salad {
+        width: 92%;
+
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+    }
+
+    .menu-header h1 {
+        font-size: 28px;
+    }
+
+    .card {
+        min-height: 210px;
+    }
+
+    .card h3 {
+        font-size: 21px;
+    }
+
+    .card h4 {
+        font-size: 22px;
+    }
+
+    .card p {
+        font-size: 15px;
+    }
+
+}
+/* ================= HOSO MAKI SPECIAL DESIGN ================= */
+
+.hoso-menu {
+    position: relative;
+
+    width: calc(100% - 220px);
+    margin: 40px;
+    margin-right: 200px;
+
+    padding: 25px 60px;
+
+    min-height: 1000px;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            rgba(15, 15, 18, 0.92),
+            rgba(15, 15, 18, 0.96)
+        );
+
+    border-radius: 5px;
+
+    scroll-margin-top: 100px;
+}
+
+
+/* Japanese dark pattern */
+
+.hoso-menu::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        repeating-linear-gradient(
+            135deg,
+            transparent 0px,
+            transparent 35px,
+            rgba(255,255,255,0.025) 36px,
+            transparent 38px
+        );
+
+    opacity: 0.5;
+
+    pointer-events: none;
+}
+
+
+/* ================= ITEMS ================= */
+
+.hoso-item {
+    position: relative;
+
+    z-index: 5;
+
+    display: flex;
+
+    align-items: center;
+
+    width: 90%;
+
+    min-height: 105px;
+
+    margin-bottom: 35px;
+}
+
+
+/* ================= PRICE ================= */
+
+.hoso-price {
+    width: 105px;
+    height: 80px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #ff5148;
+
+    color: white;
+
+    font-size: 26px;
+    font-weight: 800;
+
+    border-radius: 4px;
+
+    /* white outline زي الصورة */
+
+    text-shadow:
+        -2px -2px 0 white,
+         2px -2px 0 white,
+        -2px  2px 0 white,
+         2px  2px 0 white;
+
+    color: #ff5148;
+}
+
+
+/* ================= TEXT ================= */
+
+.hoso-info {
+    margin-left: 18px;
+}
+
+
+.hoso-info h2 {
+    margin: 0 0 5px;
+
+    color: white;
+
+    font-size: 36px;
+
+    font-weight: 800;
+
+    line-height: 1.1;
+}
+
+
+.hoso-info p {
+    margin: 0;
+
+    color: #f2f2f2;
+
+    font-size: 21px;
+
+    line-height: 1.35;
+
+    max-width: 700px;
+}
+
+
+/* ================= ORANGE SHAPES ================= */
+
+.hoso-menu::after {
+    content: "";
+
+    position: absolute;
+
+    width: 370px;
+    height: 85px;
+
+    top: 50px;
+    left: 350px;
+
+    background: rgba(150, 57, 29, 0.55);
+
+    z-index: 1;
+}
+
+
+/* ================= SUSHI ================= */
+
+.hoso-sushi {
+    position: absolute;
+
+    width: 220px;
+    height: 220px;
+
+    border-radius: 50%;
+
+    z-index: 3;
+
+    background:
+        radial-gradient(
+            circle at 50% 50%,
+            #91c83e 0 14%,
+            #d7ef91 15% 25%,
+            white 26% 55%,
+            #dedede 56% 68%,
+            #252525 69% 76%,
+            #d8d8d8 77%
+        );
+
+    box-shadow:
+        0 5px 25px rgba(0,0,0,0.6);
+
+    opacity: 0.9;
+}
+
+
+.sushi-one {
+    right: -90px;
+
+    top: 210px;
+}
+
+
+.sushi-two {
+    right: -85px;
+
+    top: 650px;
+
+    background:
+        radial-gradient(
+            circle at 50% 50%,
+            #a5d64b 0 15%,
+            #f0f0f0 16% 27%,
+            white 28% 55%,
+            #dedede 56% 68%,
+            #222 69% 76%,
+            #d5d5d5 77%
+        );
+}
+
+
+/* ================= TABLET ================= */
+
+@media (max-width: 900px) {
+
+    .hoso-menu {
+        width: calc(100% - 160px);
+
+        margin-left: 25px;
+        margin-right: 135px;
+
+        padding: 25px 30px;
+    }
+
+    .hoso-item {
+        width: 100%;
+    }
+
+    .hoso-info h2 {
+        font-size: 29px;
+    }
+
+    .hoso-info p {
+        font-size: 18px;
+    }
+
+    .hoso-price {
+        width: 90px;
+        height: 70px;
+
+        font-size: 22px;
+    }
+
+    .hoso-sushi {
+        opacity: 0.45;
+    }
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 650px) {
+
+    .hoso-menu {
+        width: 92%;
+
+        margin: 50px auto;
+
+        padding: 25px 15px;
+    }
+
+    .hoso-item {
+        width: 100%;
+
+        align-items: flex-start;
+
+        margin-bottom: 25px;
+    }
+
+    .hoso-price {
+        width: 75px;
+        height: 58px;
+
+        font-size: 17px;
+    }
+
+    .hoso-info {
+        margin-left: 10px;
+    }
+
+    .hoso-info h2 {
+        font-size: 22px;
+    }
+
+    .hoso-info p {
+        font-size: 14px;
+    }
+
+    .hoso-sushi {
+        width: 130px;
+        height: 130px;
+
+        opacity: 0.3;
+    }
+}
+/* ================= HOSO MAKI SPECIAL DESIGN ================= */
+
+.hoso-menu {
+    position: relative;
+
+    width: calc(100% - 220px);
+    margin: 40px;
+    margin-right: 200px;
+
+    padding: 25px 60px;
+
+    min-height: 1000px;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            rgba(15, 15, 18, 0.92),
+            rgba(15, 15, 18, 0.96)
+        );
+
+    border-radius: 5px;
+
+    scroll-margin-top: 100px;
+}
+
+
+/* Japanese dark pattern */
+
+.hoso-menu::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        repeating-linear-gradient(
+            135deg,
+            transparent 0px,
+            transparent 35px,
+            rgba(255,255,255,0.025) 36px,
+            transparent 38px
+        );
+
+    opacity: 0.5;
+
+    pointer-events: none;
+}
+
+
+/* ================= ITEMS ================= */
+
+.hoso-item {
+    position: relative;
+
+    z-index: 5;
+
+    display: flex;
+
+    align-items: center;
+
+    width: 90%;
+
+    min-height: 105px;
+
+    margin-bottom: 35px;
+}
+
+
+/* ================= PRICE ================= */
+
+.hoso-price {
+    width: 105px;
+    height: 80px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #ff5148;
+
+    color: white;
+
+    font-size: 26px;
+    font-weight: 800;
+
+    border-radius: 4px;
+
+    /* white outline زي الصورة */
+
+    text-shadow:
+        -2px -2px 0 white,
+         2px -2px 0 white,
+        -2px  2px 0 white,
+         2px  2px 0 white;
+
+    color: #ff5148;
+}
+
+
+/* ================= TEXT ================= */
+
+.hoso-info {
+    margin-left: 18px;
+}
+
+
+.hoso-info h2 {
+    margin: 0 0 5px;
+
+    color: white;
+
+    font-size: 36px;
+
+    font-weight: 800;
+
+    line-height: 1.1;
+}
+
+
+.hoso-info p {
+    margin: 0;
+
+    color: #f2f2f2;
+
+    font-size: 21px;
+
+    line-height: 1.35;
+
+    max-width: 700px;
+}
+
+
+/* ================= ORANGE SHAPES ================= */
+
+.hoso-menu::after {
+    content: "";
+
+    position: absolute;
+
+    width: 370px;
+    height: 85px;
+
+    top: 50px;
+    left: 350px;
+
+    background: rgba(150, 57, 29, 0.55);
+
+    z-index: 1;
+}
+
+
+/* ================= SUSHI ================= */
+
+.hoso-sushi {
+    position: absolute;
+
+    width: 220px;
+    height: 220px;
+
+    border-radius: 50%;
+
+    z-index: 3;
+
+    background:
+        radial-gradient(
+            circle at 50% 50%,
+            #91c83e 0 14%,
+            #d7ef91 15% 25%,
+            white 26% 55%,
+            #dedede 56% 68%,
+            #252525 69% 76%,
+            #d8d8d8 77%
+        );
+
+    box-shadow:
+        0 5px 25px rgba(0,0,0,0.6);
+
+    opacity: 0.9;
+}
+
+
+.sushi-one {
+    right: -90px;
+
+    top: 210px;
+}
+
+
+.sushi-two {
+    right: -85px;
+
+    top: 650px;
+
+    background:
+        radial-gradient(
+            circle at 50% 50%,
+            #a5d64b 0 15%,
+            #f0f0f0 16% 27%,
+            white 28% 55%,
+            #dedede 56% 68%,
+            #222 69% 76%,
+            #d5d5d5 77%
+        );
+}
+
+
+/* ================= TABLET ================= */
+
+@media (max-width: 900px) {
+
+    .hoso-menu {
+        width: calc(100% - 160px);
+
+        margin-left: 25px;
+        margin-right: 135px;
+
+        padding: 25px 30px;
+    }
+
+    .hoso-item {
+        width: 100%;
+    }
+
+    .hoso-info h2 {
+        font-size: 29px;
+    }
+
+    .hoso-info p {
+        font-size: 18px;
+    }
+
+    .hoso-price {
+        width: 90px;
+        height: 70px;
+
+        font-size: 22px;
+    }
+
+    .hoso-sushi {
+        opacity: 0.45;
+    }
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 650px) {
+
+    .hoso-menu {
+        width: 92%;
+
+        margin: 50px auto;
+
+        padding: 25px 15px;
+    }
+
+    .hoso-item {
+        width: 100%;
+
+        align-items: flex-start;
+
+        margin-bottom: 25px;
+    }
+
+    .hoso-price {
+        width: 75px;
+        height: 58px;
+
+        font-size: 17px;
+    }
+
+    .hoso-info {
+        margin-left: 10px;
+    }
+
+    .hoso-info h2 {
+        font-size: 22px;
+    }
+
+    .hoso-info p {
+        font-size: 14px;
+    }
+
+    .hoso-sushi {
+        width: 130px;
+        height: 130px;
+
+        opacity: 0.3;
+    }
+}
+
+/* ================= HOSO MAKI SPECIAL DESIGN ================= */
+
+.hoso-menu {
+    position: relative;
+
+    width: calc(100% - 220px);
+    margin: 40px;
+    margin-right: 200px;
+
+    padding: 25px 60px;
+
+    min-height: 1000px;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            rgba(15, 15, 18, 0.92),
+            rgba(15, 15, 18, 0.96)
+        );
+
+    border-radius: 5px;
+
+    scroll-margin-top: 100px;
+}
+
+
+/* Japanese dark pattern */
+
+.hoso-menu::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        repeating-linear-gradient(
+            135deg,
+            transparent 0px,
+            transparent 35px,
+            rgba(255,255,255,0.025) 36px,
+            transparent 38px
+        );
+
+    opacity: 0.5;
+
+    pointer-events: none;
+}
+
+
+/* ================= ITEMS ================= */
+
+.hoso-item {
+    position: relative;
+
+    z-index: 5;
+
+    display: flex;
+
+    align-items: center;
+
+    width: 90%;
+
+    min-height: 105px;
+
+    margin-bottom: 35px;
+}
+
+
+/* ================= PRICE ================= */
+
+.hoso-price {
+    width: 105px;
+    height: 80px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #ff5148;
+
+    color: white;
+
+    font-size: 26px;
+    font-weight: 800;
+
+    border-radius: 4px;
+
+    /* white outline زي الصورة */
+
+    text-shadow:
+        -2px -2px 0 white,
+         2px -2px 0 white,
+        -2px  2px 0 white,
+         2px  2px 0 white;
+
+    color: #ff5148;
+}
+
+
+/* ================= TEXT ================= */
+
+.hoso-info {
+    margin-left: 18px;
+}
+
+
+.hoso-info h2 {
+    margin: 0 0 5px;
+
+    color: white;
+
+    font-size: 36px;
+
+    font-weight: 800;
+
+    line-height: 1.1;
+}
+
+
+.hoso-info p {
+    margin: 0;
+
+    color: #f2f2f2;
+
+    font-size: 21px;
+
+    line-height: 1.35;
+
+    max-width: 700px;
+}
+
+
+/* ================= ORANGE SHAPES ================= */
+
+.hoso-menu::after {
+    content: "";
+
+    position: absolute;
+
+    width: 370px;
+    height: 85px;
+
+    top: 50px;
+    left: 350px;
+
+    background: rgba(150, 57, 29, 0.55);
+
+    z-index: 1;
+}
+
+
+/* ================= SUSHI ================= */
+
+.hoso-sushi {
+    position: absolute;
+
+    width: 220px;
+    height: 220px;
+
+    border-radius: 50%;
+
+    z-index: 3;
+
+    background:
+        radial-gradient(
+            circle at 50% 50%,
+            #91c83e 0 14%,
+            #d7ef91 15% 25%,
+            white 26% 55%,
+            #dedede 56% 68%,
+            #252525 69% 76%,
+            #d8d8d8 77%
+        );
+
+    box-shadow:
+        0 5px 25px rgba(0,0,0,0.6);
+
+    opacity: 0.9;
+}
+
+
+.sushi-one {
+    right: -90px;
+
+    top: 210px;
+}
+
+
+.sushi-two {
+    right: -85px;
+
+    top: 650px;
+
+    background:
+        radial-gradient(
+            circle at 50% 50%,
+            #a5d64b 0 15%,
+            #f0f0f0 16% 27%,
+            white 28% 55%,
+            #dedede 56% 68%,
+            #222 69% 76%,
+            #d5d5d5 77%
+        );
+}
+
+
+/* ================= TABLET ================= */
+
+@media (max-width: 900px) {
+
+    .hoso-menu {
+        width: calc(100% - 160px);
+
+        margin-left: 25px;
+        margin-right: 135px;
+
+        padding: 25px 30px;
+    }
+
+    .hoso-item {
+        width: 100%;
+    }
+
+    .hoso-info h2 {
+        font-size: 29px;
+    }
+
+    .hoso-info p {
+        font-size: 18px;
+    }
+
+    .hoso-price {
+        width: 90px;
+        height: 70px;
+
+        font-size: 22px;
+    }
+
+    .hoso-sushi {
+        opacity: 0.45;
+    }
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 650px) {
+
+    .hoso-menu {
+        width: 92%;
+
+        margin: 50px auto;
+
+        padding: 25px 15px;
+    }
+
+    .hoso-item {
+        width: 100%;
+
+        align-items: flex-start;
+
+        margin-bottom: 25px;
+    }
+
+    .hoso-price {
+        width: 75px;
+        height: 58px;
+
+        font-size: 17px;
+    }
+
+    .hoso-info {
+        margin-left: 10px;
+    }
+
+    .hoso-info h2 {
+        font-size: 22px;
+    }
+
+    .hoso-info p {
+        font-size: 14px;
+    }
+
+    .hoso-sushi {
+        width: 130px;
+        height: 130px;
+
+        opacity: 0.3;
+    }
+}
+
